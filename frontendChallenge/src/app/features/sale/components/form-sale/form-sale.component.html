@@ -1,0 +1,59 @@
+<div class="content">
+<form [formGroup]="formSale" (ngSubmit)="onSubmit()" action="formSale">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Fecha</label>
+      <input
+        type="date"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Name"
+        formControlName="fecha"
+      />
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Cleinte</label>
+      <select
+        class="form-select"
+        aria-label="Default select example"
+        formControlName="client_id"
+        *ngFor="let client of clients"
+      >
+        <option value="{{ client.id }}">{{ client.nombre }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <input
+        class="form-control"
+        list="datalistOptions"
+        id="exampleDataList"
+        placeholder="Agregar producto..."
+        (input)="addItem($event)"
+  
+      />
+      <datalist id="datalistOptions" *ngFor="let product of products" >
+        <option value="{{product.nombre}}"  >{{product.id}} </option>
+      </datalist>
+    </div>
+    <div class="col-md-12">
+      <table class="table table-bordered table-hover " *ngIf>
+          <tbody>
+              <tr >
+                 <td  *ngFor="let item of items">
+                     <div >
+                         {{item.nombre}}
+                     </div>
+  
+                 </td>
+                 <td><div  class="text-center">
+                   <button class="btn btn-sm btn-primary"  style="margin-left: 10px;">Delete</button>
+               </div></td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+    <button (click)="(formSale)" class="btn btn-primary">
+      {{ buttonLabel }}
+    </button>
+  </form>
+</div>

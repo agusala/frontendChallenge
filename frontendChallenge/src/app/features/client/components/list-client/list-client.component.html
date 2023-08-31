@@ -1,0 +1,9 @@
+<div class="content">
+<app-list-items
+[HeadArray]="columns"
+[GridArray]="clients"
+(onEdit)="editClient($event)"
+(onDelete)="deleteClient($event)"
+[titleTable]="titleTable"
+
+></app-list-items></div>
