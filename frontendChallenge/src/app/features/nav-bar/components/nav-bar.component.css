@@ -1,0 +1,10 @@
+.navbar {
+    background-color: yellow;
+    width: 100%; }
+  
+   .sidebar {
+    position: fixed;
+    top: 65px;     left: 0;
+    bottom: 0;
+    width: 120px;
+    background-color: black;    padding: 15px;     z-index: 1000;   }
